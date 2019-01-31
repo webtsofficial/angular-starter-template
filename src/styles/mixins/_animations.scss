@@ -1,0 +1,16 @@
+@mixin transition($property, $duration, $timing) {
+  -moz-transition: $property $duration $timing;
+  -webkit-transition: $property $duration $timing;
+  -o-transition: $property $duration $timing;
+  transition: $property $duration $timing;
+}
+
+@mixin transitions($transitions...) {
+  @each $transition in $transitions {
+    -webkit-transition: #{$transition};
+    -moz-transition: #{$transition};
+    -ms-transition: #{$transition};
+    -o-transition: #{$transition};
+    transition: #{$transition};
+  }
+}
